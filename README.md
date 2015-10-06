@@ -1,26 +1,26 @@
 Frpz:IP
-=======
+#######
 
 Small tools to manipulates IP
 
-== long2ip(long)
+## long2ip(long)
 
-== ip2long(ip)
+## ip2long(ip)
 
-== inSubNet(ip, subnet)
+## inSubNet(ip, subnet)
 
-== subAllIp(net, mask)
+## subAllIp(net, mask)
 
-== bit2mask(bit)
+## bit2mask(bit)
 
-== mask2bit(mask)
+## mask2bit(mask)
 
-== subBroadcast(net, mask)
+## subBroadcast(net, mask)
 
-= Credits
+# Credits
 
 Most of this was found on Stackoverflow.
 
-= Documentation
+# Documentation
 
 Will add more doc later...
