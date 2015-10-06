@@ -1,21 +1,25 @@
 Frpz:IP
-#######
+=======
 
 Small tools to manipulates IP
 
-## long2ip(long)
+# Install
 
-## ip2long(ip)
+    meteor add frpz:ip
 
-## inSubNet(ip, subnet)
+## IP.long2ip(long)
 
-## subAllIp(net, mask)
+## IP.ip2long(ip)
 
-## bit2mask(bit)
+## IP.inSubNet(ip, subnet)
 
-## mask2bit(mask)
+## IP.subAllIp(net, mask)
 
-## subBroadcast(net, mask)
+## IP.bit2mask(bit)
+
+## IP.mask2bit(mask)
+
+## IP.subBroadcast(net, mask)
 
 # Credits
 
