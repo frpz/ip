@@ -2,7 +2,7 @@ Package.describe({
   name: 'frpz:ip',
   version: '0.1.0',
   // Brief, one-line summary of the package.
-  summary: 'Some simple tools to manipulate IPv4 address',
+  summary: 'Some simple tools to manipulate IPv4 addresses',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/frpz/ip.git',
   // By default, Meteor will default to using README.md for documentation.

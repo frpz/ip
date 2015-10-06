@@ -1,7 +1,7 @@
 Frpz:IP
 =======
 
-Small tools to manipulates IP
+Small tools to manipulate IPv4
 
 # Install
 
