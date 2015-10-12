@@ -74,7 +74,6 @@ IP = {
 		if(nb == 2) return [net, (this.long2ip(this.ip2long(net) + 1))];
 		//var list = [];
 		var list = _.range(1,(nb - 1 )).map(v => this.long2ip(this.ip2long(net) + parseInt(v) ) );
-		console.log("subAllIp", nb);
 		return list;
 	},
 
