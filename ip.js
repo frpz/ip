@@ -85,7 +85,8 @@ IP = {
 
 	mask2bit(mask){
 		//converti 255.255.255.0 en 24
-		return 32 - Math.log10(Math.pow(2,32) - this.ip2long(mask))/Math.log10(2);
+		//return 32 - Math.log10(Math.pow(2,32) - this.ip2long(mask))/Math.log10(2);
+		return 32 - Math.log(Math.pow(2,32) - this.ip2long(mask))/Math.LN2;
 	},
 	bit2mask(bit){
 		//converti 24 en 255.255.255.0 
