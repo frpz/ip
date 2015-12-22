@@ -4,7 +4,7 @@
 // by Francis Pugnere
 
 IP = {
-	long2ip(ip) {
+	long2ip: function(ip) {
 	  //  discuss at: http://phpjs.org/functions/this.long2ip/
 	  // original by: Waldo Malqui Silva (http://waldo.malqui.info)
 	  //   example 1: this.long2ip( 3221234342 );
@@ -16,7 +16,7 @@ IP = {
 	  return [ip >>> 24, ip >>> 16 & 0xFF, ip >>> 8 & 0xFF, ip & 0xFF].join('.');
 	},
 
-	ip2long(IP) {
+	ip2long: function(IP) {
 	  //  discuss at: http://phpjs.org/functions/this.ip2long/
 	  // original by: Waldo Malqui Silva (http://waldo.malqui.info)
 	  // improved by: Victor
@@ -57,7 +57,7 @@ IP = {
 	  return IP[1] * (IP[0] === 1 || 16777216) + IP[2] * (IP[0] <= 2 || 65536) + IP[3] * (IP[0] <= 3 || 256) + IP[4] * 1;
 	},
 
-	inSubNet(ip, subnet) {   
+	inSubNet: function(ip, subnet) {
 		//inSubNet('192.30.252.63', '192.30.252.0/22') => true
 		//inSubNet('192.31.252.63', '192.30.252.0/22') => false
 		var mask, base_ip, long_ip = this.ip2long(ip);
@@ -68,27 +68,28 @@ IP = {
 		else return false;
 	},
 
-	subAllIp(net, mask){
+	subAllIp: function(net, mask){
+		var IP = this;
 		var nb = Math.pow(2, 32 - parseInt(mask));
 		if(nb == 1) return [net];
 		if(nb == 2) return [net, (this.long2ip(this.ip2long(net) + 1))];
 		//var list = [];
-		var list = _.range(1,(nb - 1 )).map(v => this.long2ip(this.ip2long(net) + parseInt(v) ) );
+		var list = _.range(1,(nb - 1 )).map(function(v){ return IP.long2ip(IP.ip2long(net) + parseInt(v) )} );
 		return list;
 	},
 
-	subBroadcast(net, mask){
+	subBroadcast: function(net, mask){
 		var nb = Math.pow(2, 32 - parseInt(mask));
 		if(nb == 1) return net;
 		return this.long2ip(this.ip2long(net) + parseInt(nb -1));
 	},
 
-	mask2bit(mask){
+	mask2bit: function(mask){
 		//converti 255.255.255.0 en 24
 		//return 32 - Math.log10(Math.pow(2,32) - this.ip2long(mask))/Math.log10(2);
 		return 32 - Math.log(Math.pow(2,32) - this.ip2long(mask))/Math.LN2;
 	},
-	bit2mask(bit){
+	bit2mask: function(bit){
 		//converti 24 en 255.255.255.0 
 		return this.long2ip(Math.pow(2,32) - Math.pow(2,32 - bit) );
 		//return this.long2ip((0xffffffff << (32 - bit)) >>> 0);
